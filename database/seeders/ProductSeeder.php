@@ -26,7 +26,12 @@ class ProductSeeder extends Seeder
             ['name' => 'Notebook', 'description' => '100 pages ruled notebook', 'price' => 40.00, 'category_id' => 9],
         ];
 
-        DB::table('products')->insert($products);
+        foreach ($products as $product) {
+            \App\Models\Product::create($product);
+        }
 
     }
 }
+
+
+
